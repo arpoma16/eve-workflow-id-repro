@@ -11,9 +11,8 @@ import { z } from "zod";
 //   The tool was renamed or removed after this run started.
 export default defineWorkflowTool({
   description: "Minimal background workflow tool reproducing the workspace workflowId mismatch.",
-  execution: "background",
   inputSchema: z.object({}),
-  async execute() {
+  async task() {
     "use workflow";
     return { status: "ok" };
   },
